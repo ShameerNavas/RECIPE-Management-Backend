@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Admin Login";
+}
+
+<link rel="stylesheet" href="~/css/welcome.css" />
+
+<div class="welcome-full">
+    <div class="welcome-overlay">
+        <div class="text-center mb-4">
+            <h1 class="display-4 text-success">Admin Panel</h1>
+            <p class="lead">Manage recipes and users</p>
+        </div>
+
+        <form asp-action="AdminLogin" method="post" class="mx-auto" style="max-width:380px;">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" name="Email" type="email" class="form-control" placeholder="admin@example.com" required />
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" name="Password" type="password" class="form-control" placeholder="Password" required />
+            </div>
+
+            <button type="submit" class="btn btn-success btn-block">Login</button>
+        </form>
+
+        @if (ViewBag.ErrorMessage != null)
+        {
+            <div class="text-danger text-center mt-3">@ViewBag.ErrorMessage</div>
+        }
+    </div>
+</div>

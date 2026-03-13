@@ -1,0 +1,40 @@
+﻿@model IEnumerable<RECIPE.Models.Recipe>
+
+@{
+    ViewData["Title"] = "Most Viewed Recipes";
+}
+
+<h2 class="text-center mb-4">Most Viewed Recipes</h2>
+<div class="d-flex justify-content-center">
+    <div class="col-md-10">
+<table class="table table-bordered table-striped text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>Recipe ID</th>
+            <th>Recipe Name</th>
+            <th>Author</th>
+            <th>Views</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var recipe in Model)
+        {
+            <tr>
+                <td>@recipe.RecipeId</td>
+                <td>@recipe.Title</td>
+                <td>@recipe.Author</td>
+                        <td>
+                            @recipe.LikeCount
+                        </td>
+                <td>
+                    <a asp-action="RecipeDetail" asp-route-id="@recipe.RecipeId" class="btn btn-success btn-sm">
+                        View Recipe
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+    </div>
+</div>

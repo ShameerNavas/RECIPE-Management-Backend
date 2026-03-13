@@ -1,0 +1,45 @@
+﻿@using System.Linq
+@model IEnumerable<RECIPE.Models.Recipe>
+
+@{
+    ViewData["Title"] = "View Recipe";
+}
+
+<h2 class="text-center mt-3 mb-4">Recipe List</h2>
+
+<div class="container">
+    <table class="table table-bordered table-hover shadow-sm rounded">
+        <thead class="thead-dark bg-dark text-white">
+            <tr class="text-center">
+                <th>User ID</th>
+                <th>Recipe Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var recipe in Model)
+                {
+                    <tr class="text-center align-middle">
+                        <td>@recipe.Author</td>
+                        <td>@recipe.Title</td>
+                        <td>
+                            <a asp-action="RecipeDetail" asp-route-id="@recipe.RecipeId" class="btn btn-success btn-sm px-3">
+                                View Recipe
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="3" class="text-center text-muted">No recipes found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

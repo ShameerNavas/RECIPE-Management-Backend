@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Recipe List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body class="bg-light">
+    <div class="container mt-4">
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <button onclick="window.history.back()" class="btn btn-outline-secondary">
+                ← Go Back
+            </button>
+            <h3 class="text-center flex-grow-1">Recipe List</h3>
+            <button class="btn btn-light">Logout</button>
+        </div>
+
+        <td>User Id: sam@gmail.com</td>
+        <br/>
+        <br />
+        <table class="table table-bordered bg-white shadow-sm text-center" >
+            <thead class="thead-dark">
+               
+                <tr>
+                    <th>Title of Recipe</th>
+                    <th>Action</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Chocolate Cake</td>
+                    
+                    <td><button class="btn btn-success">View Detail</button></td>
+                </tr>
+                <tr>
+                    <td>Spicy Noodles</td>
+                    
+                    <td><button class="btn btn-success">View Detail</button></td>
+                </tr>
+                <tr>
+                    <td>Paneer Tikka</td>
+                    
+                    <td><button class="btn btn-success">View Detail</button></td>
+                </tr>
+                <tr>
+                    <td>Grilled Sandwich</td>
+                   
+                    <td><button class="btn btn-success">View Detail</button></td>
+                </tr>
+                <tr>
+                    <td>Fruit Salad</td>
+                    
+                    <td><button class="btn btn-success">View Detail</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

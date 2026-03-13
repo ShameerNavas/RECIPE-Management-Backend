@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Recipe Management</title>
+
+    <!-- Bootstrap 4 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+
+    <!-- External Site CSS -->
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    <!-- ✅ Navbar Section -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand font-weight-bold text-light" href="/">Recipe Management</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "ViewRecipe" ? "active" : "")" href="/Home/ViewRecipe">View Recipe</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "UserList" ? "active" : "")" href="/Home/UserList">User List</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "MostViewed" ? "active" : "")" href="/Home/MostViewed">Most Viewed</a>
+            </li>
+        </ul>
+
+
+
+            <!-- Right-side logout button -->
+            <form class="form-inline my-2 my-lg-0">
+            <a asp-controller="Home" asp-action="Logout" class="btn btn-success">Logout</a>
+
+            </form>
+        </div>
+    </nav>
+
+    <!-- ✅ Main Content Area -->
+    <div class="container-fluid p-3">
+        @RenderBody()
+    </div>
+
+    <!-- ✅ Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

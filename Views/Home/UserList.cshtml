@@ -1,0 +1,58 @@
+﻿@model IEnumerable<RECIPE.Models.User>
+
+@{
+    ViewData["Title"] = "User List";
+}
+
+<h2 class="text-center mt-3 mb-4">User List</h2>
+
+<div class="container">
+    <table class="table table-bordered table-hover shadow-sm rounded">
+        <thead class="bg-dark text-white text-center">
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Any())
+            {
+                foreach (var user in Model)
+                {
+                    <tr class="text-center align-middle">
+                        <td>@user.UserId</td>
+                        <td>@user.Name</td>
+                        <td>@user.Email</td>
+                        <td>
+                            <div class="d-flex justify-content-center align-items-center gap-2">
+                                <!-- View Details button -->
+                                <a asp-action="UserRecipeList" asp-route-userId="@user.UserId" class="btn btn-success btn-sm px-3">
+                                    View Details
+                                </a>
+
+
+                                <!-- Block / Unblock radio buttons -->
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="status_@user.UserId" id="block_@user.UserId" value="Blocked">
+                                    <label class="form-check-label text-danger" for="block_@user.UserId">Block</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="status_@user.UserId" id="unblock_@user.UserId" value="Active" checked>
+                                    <label class="form-check-label text-success" for="unblock_@user.UserId">Unblock</label>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center text-muted">No users found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
