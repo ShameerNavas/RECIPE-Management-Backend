@@ -91,11 +91,8 @@ var app = builder.Build();
 // ? Step 2: Use CORS globally before MapControllers
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
