@@ -103,9 +103,11 @@ git clone https://github.com/ShameerNavas/RECIPE-Management-Backend.git
 # Open in Visual Studio
 
 # Restore packages
+
 dotnet restore
 
 # Run project
+
 dotnet run
 
 ---
