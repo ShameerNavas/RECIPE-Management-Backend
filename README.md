@@ -41,18 +41,18 @@ It handles user authentication, recipe management, and database operations using
 
 ## 📂 Project Structure  
 
-Controllers/
- ├── UserController.cs
+- Controllers/
+  - UserController.cs
 
-Models/
- ├── User.cs
- ├── Recipe.cs
+- Models/
+  - User.cs
+  - Recipe.cs
 
-DBContext/
- ├── MyDbContext.cs
+- DBContext/
+  - MyDbContext.cs
 
-Program.cs
-appsettings.json
+- Program.cs  
+- appsettings.json
 ---
 
 ## 🔐 Authentication (JWT)  
@@ -69,27 +69,29 @@ appsettings.json
 
 ## 📡 API Endpoints  
 
-### 🔑 Authentication  
+### 🔐 Authentication  
 
-POST /api/User/signup
-POST /api/User/login
+- POST /api/User/signup  
+- POST /api/User/login  
+
 ---
 
 ### 👤 User  
 
-GET /api/User/UserProfile/{userId}
-PUT /api/User/UpdatePassword/{userId}
+- GET /api/User/UserProfile/{userId}  
+- PUT /api/User/UpdatePassword/{userId}  
+
 ---
 
 ### 🍽️ Recipes  
 
-GET /api/User/Feed
-GET /api/User/RecipeProfile/{userId}
-GET /api/User/RecipeDetail/{recipeId}
+- GET /api/User/Feed  
+- GET /api/User/RecipeProfile/{userId}  
+- GET /api/User/RecipeDetail/{recipeId}  
 
-POST /api/User/add-recipe
-PUT /api/User/EditRecipe/{recipeId}
-DELETE /api/User/DeleteRecipe/{recipeId}
+- POST /api/User/add-recipe  
+- PUT /api/User/EditRecipe/{recipeId}  
+- DELETE /api/User/DeleteRecipe/{recipeId}
 ---
 
 ## ⚙️ Setup & Installation  
@@ -117,10 +119,11 @@ Connection string (Azure SQL):
 
 ## 🔄 Entity Framework Migrations  
 
-# Add migration
-dotnet ef migrations add InitialCreate
+### Add Migration  
 
-# Update database
+dotnet ef migrations add InitialCreate
+### Update Database  
+
 dotnet ef database update
 ---
 
@@ -128,7 +131,7 @@ dotnet ef database update
 
 - Hosted on Azure App Service  
 - Connected with GitHub for CI/CD  
-- Automatic deployment on push  
+- Automatic deployment on code push  
 
 ---
 
@@ -141,6 +144,7 @@ ASP.NET Core Web API
 Entity Framework Core
         ↓
 Azure SQL Database
+
 ---
 
 ## 🎯 Key Highlights  
