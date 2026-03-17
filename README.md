@@ -115,6 +115,7 @@ Connection string (Azure SQL):
 "ConnectionStrings": {
   "DefaultConnection": "Server=tcp:recipeproject.database.windows.net,1433;Initial Catalog=recipe-db;Persist Security Info=False;User ID=recipeadmin;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
 }
+
 ---
 
 ## 🔄 Entity Framework Migrations  
@@ -125,6 +126,7 @@ dotnet ef migrations add InitialCreate
 ### Update Database  
 
 dotnet ef database update
+
 ---
 
 ## 🌍 Deployment  
