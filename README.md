@@ -53,6 +53,7 @@ It handles user authentication, recipe management, and database operations using
 
 - Program.cs  
 - appsettings.json
+  
 ---
 
 ## 🔐 Authentication (JWT)  
@@ -106,6 +107,7 @@ dotnet restore
 
 # Run project
 dotnet run
+
 ---
 
 ## 🗄️ Database Configuration  
