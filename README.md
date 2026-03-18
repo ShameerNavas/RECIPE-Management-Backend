@@ -41,18 +41,17 @@ It handles user authentication, recipe management, and database operations using
 
 ## 📂 Project Structure  
 ```
-Controllers/
-│── UserController.cs
+📦 Backend
+ ┣ 📂 Controllers
+ ┃ ┗ 📜 UserController.cs
+ ┣ 📂 Models
+ ┃ ┣ 📜 User.cs
+ ┃ ┗ 📜 Recipe.cs
+ ┣ 📂 DBContext
+ ┃ ┗ 📜 MyDbContext.cs
+ ┣ 📜 Program.cs
+ ┗ 📜 appsettings.json
 
-Models/
-│── User.cs
-│── Recipe.cs
-
-DBContext/
-│── MyDbContext.cs
-
-Program.cs
-appsettings.json
 ```
   
 ---
