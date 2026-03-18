@@ -97,16 +97,16 @@ It handles user authentication, recipe management, and database operations using
 
 ## ⚙️ Setup & Installation  
 
-# Clone repository
+### - Clone repository
 git clone https://github.com/ShameerNavas/RECIPE-Management-Backend.git
 
-# Open in Visual Studio
+### - Open in Visual Studio
 
-# Restore packages
+### - Restore packages
 
 dotnet restore
 
-# Run project
+### - Run project
 
 dotnet run
 
@@ -114,7 +114,7 @@ dotnet run
 
 ## 🗄️ Database Configuration  
 
-Connection string (Azure SQL):
+### Connection string (Azure SQL):
 
 "ConnectionStrings": {
   "DefaultConnection": "Server=tcp:recipeproject.database.windows.net,1433;Initial Catalog=recipe-db;Persist Security Info=False;User ID=recipeadmin;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
@@ -124,10 +124,10 @@ Connection string (Azure SQL):
 
 ## 🔄 Entity Framework Migrations  
 
-### Add Migration  
+### - Add Migration  
 
 dotnet ef migrations add InitialCreate
-### Update Database  
+### - Update Database  
 
 dotnet ef database update
 
