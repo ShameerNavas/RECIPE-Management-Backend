@@ -141,16 +141,17 @@ dotnet ef database update
 
 ---
 
-## 🧠 Architecture  
+## 🧠 Architecture 
 
-- Client (React Frontend)
+```
+Client (React Frontend)
         ↓
-- ASP.NET Core Web API
+ASP.NET Core Web API
         ↓
-- Entity Framework Core
+Entity Framework Core
         ↓
-- Azure SQL Database
-
+Azure SQL Database
+```
 ---
 
 ## 🎯 Key Highlights  
