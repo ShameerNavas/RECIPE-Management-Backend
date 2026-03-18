@@ -80,7 +80,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowReactApp", policy =>
     {
-        policy.AllowAnyOrigin() // your React app URL
+         policy.WithOrigins("https://my-recipe-demo.netlify.app") 
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
@@ -98,7 +98,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-app.UseCors("AllowReactApp");
+app.UseCors("AllowFrontend");
 app.UseSession();
 app.UseAuthentication();
 app.UseAuthorization();
