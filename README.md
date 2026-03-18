@@ -40,19 +40,20 @@ It handles user authentication, recipe management, and database operations using
 ---
 
 ## 📂 Project Structure  
+```
+Controllers/
+│── UserController.cs
 
-- Controllers/
-  - UserController.cs
+Models/
+│── User.cs
+│── Recipe.cs
 
-- Models/
-  - User.cs
-  - Recipe.cs
+DBContext/
+│── MyDbContext.cs
 
-- DBContext/
-  - MyDbContext.cs
-
-- Program.cs  
-- appsettings.json
+Program.cs
+appsettings.json
+```
   
 ---
 
