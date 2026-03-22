@@ -82,7 +82,8 @@ builder.Services.AddCors(options =>
     {
          policy.WithOrigins("https://my-recipe-demo.netlify.app") 
               .AllowAnyHeader()
-              .AllowAnyMethod();
+              .AllowAnyMethod()
+              .AllowCredentials();
     });
 });
 
