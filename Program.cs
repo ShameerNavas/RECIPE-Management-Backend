@@ -78,7 +78,7 @@ builder.Services.AddAuthentication(options =>
 // ? Step 1: Configure global CORS policy
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowReactApp", policy =>
+    options.AddPolicy("AllowFrontend", policy =>
     {
          policy.WithOrigins("https://my-recipe-demo.netlify.app") 
               .AllowAnyHeader()
