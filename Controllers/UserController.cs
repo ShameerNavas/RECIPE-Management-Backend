@@ -132,7 +132,7 @@ public class UserController : ControllerBase
         var userExists = _context.Users.Any(u => u.UserId == recipe.Author);
         if (!userExists)
             return BadRequest("Invalid User ID.");
-
+          recipe.User = null; // Ensure we don't accidentally add a new User
         _context.Recipes.Add(recipe);  // Only add the Recipe, not the User
         _context.SaveChanges();
 
