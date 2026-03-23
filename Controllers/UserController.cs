@@ -119,24 +119,32 @@ public class UserController : ControllerBase
             data = recipes
         });
     }
- 
+
 
 
     [HttpPost("add-recipe")]
     public IActionResult AddRecipe([FromBody] Recipe recipe)
     {
-        if (recipe == null)
-            return BadRequest("Recipe data is required.");
+        try
+        {
+            if (recipe == null)
+                return BadRequest("Recipe data is required.");
 
-        // Don't attach user object, just assign the Author (UserId)
-        var userExists = _context.Users.Any(u => u.UserId == recipe.Author);
-        if (!userExists)
-            return BadRequest("Invalid User ID.");
-          recipe.User = null; // Ensure we don't accidentally add a new User
-        _context.Recipes.Add(recipe);  // Only add the Recipe, not the User
-        _context.SaveChanges();
+            var userExists = _context.Users.Any(u => u.UserId == recipe.Author);
+            if (!userExists)
+                return BadRequest("Invalid User ID.");
 
-        return Ok(new { message = "Recipe added successfully!" });
+            recipe.User = null;
+
+            _context.Recipes.Add(recipe);
+            _context.SaveChanges();
+
+            return Ok(new { message = "Recipe added successfully!" });
+        }
+        catch (Exception ex)
+        {
+            return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
+        }
     }
 
 
