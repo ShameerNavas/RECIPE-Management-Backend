@@ -123,10 +123,30 @@ public class UserController : ControllerBase
 
 
     [HttpPost("add-recipe")]
-    public IActionResult AddRecipe([FromBody] Recipe recipe)
+public IActionResult AddRecipe([FromBody] Recipe recipe)
+{
+    try
     {
-        return Ok(recipe); // 🔥 TEMP TEST
+        if (recipe == null)
+            return BadRequest("Recipe data is required.");
+
+        var userExists = _context.Users.Any(u => u.UserId == recipe.Author);
+        if (!userExists)
+            return BadRequest("Invalid User ID.");
+
+        recipe.User = null;
+        recipe.LikeCount = 0;
+
+        _context.Recipes.Add(recipe);
+        _context.SaveChanges();
+
+        return Ok(new { message = "Recipe added successfully!" });
     }
+    catch (Exception ex)
+    {
+        return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
+    }
+}
 
 
     [HttpGet("UserProfile/{userId}")]
