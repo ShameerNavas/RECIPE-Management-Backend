@@ -208,11 +208,12 @@ public IActionResult AddRecipe([FromBody] Recipe recipe)
             return NotFound("Recipe not found.");
 
         recipe.Title = updatedRecipe.Title;
-        
         recipe.Ingredients = updatedRecipe.Ingredients;
         recipe.Steps = updatedRecipe.Steps;
-       
-
+        recipe.CookingTime = updatedRecipe.CookingTime;
+        recipe.DifficultyLevel = updatedRecipe.DifficultyLevel;
+        recipe.Image = updatedRecipe.Image;
+        
         _context.SaveChanges();
         return Ok("Recipe updated successfully.");
     }
