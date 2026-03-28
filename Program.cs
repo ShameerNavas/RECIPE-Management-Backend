@@ -80,10 +80,10 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-         policy.WithOrigins("https://my-recipe-demo.netlify.app") 
-              .AllowAnyHeader()
-              .AllowAnyMethod()
-              .AllowCredentials();
+            policy.WithOrigins("https://recipe-management-frontend-psi.vercel.app/","http://localhost:3000")
+                 .AllowAnyHeader()
+                 .AllowAnyMethod()
+                 .AllowCredentials();
     });
 });
 
