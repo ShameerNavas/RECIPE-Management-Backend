@@ -56,6 +56,18 @@ It handles user authentication, recipe management, and database operations using
   
 ---
 
+## 👨‍💻 Screenshots
+
+
+
+![photo_2026-03-24_21-41-04](https://github.com/user-attachments/assets/5724df85-dc68-410a-bc1d-0384dbc84ecf)
+
+
+
+
+
+---
+
 ## 🔐 Authentication (JWT)  
 
 - JWT token is generated on successful login  
